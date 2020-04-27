@@ -26,9 +26,11 @@ if (process.env.EXPERIMENTAL_FLOW_BM === 'true') {
   });
 }
 if (process.env.EXPERIMENTAL_FLOW_EDITOR === 'true') {
+  const useBobTemplate = process.env.EXPERIMENTAL_BOB_TEMPLATE === 'true';
+
   templates.push({
     name: 'flow-editor',
-    path: toTemplatePath('flow-editor'),
+    path: toTemplatePath(useBobTemplate ? 'flow-editor-bob' : 'flow-editor'),
   });
 }
 
