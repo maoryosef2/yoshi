@@ -1,0 +1,65 @@
+{
+  "name": "@wix/{%projectName%}",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "author": {
+    "name": "{%authorName%}",
+    "email": "{%authorEmail%}"
+  },
+  "scripts": {
+    "start": "yoshi-flow-editor start",
+    "build": "yoshi-flow-editor build",
+    "test": "yoshi-flow-editor test",
+    "lint": "yoshi-flow-editor lint",
+    "posttest": "npm run lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,scss,less}": "yarn lint"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.3.0",
+    "@types/express": "^4.17.2",
+    "@types/express-session": "~1.15.0",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "@wix/fedops-logger": "^5.0.0",
+    "@wix/platform-editor-sdk": "0.0.844",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "husky": "^4.2.1",
+    "jest-yoshi-preset": "^4.1.0",
+    "lint-staged": "^10.0.7",
+    "puppeteer": "^1.1.0",
+    "typescript": "~3.7.5",
+    "velocity": "~0.7.0",
+    "yoshi-flow-editor": "latest",
+    "yoshi-style-dependencies": "^4.1.0"
+  },
+  "dependencies": {
+    "@wix/bob-widget-services": "^1.29.0",
+    "@wix/wix-axios-config": "latest",
+    "axios": "^0.19.0",
+    "i18next": "^19.1.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-i18next": "^11.3.2",
+    "wix-base-ui": "^3.671.0",
+    "yoshi-flow-editor-runtime": "*"
+  },
+  "jest": {
+    "preset": "jest-yoshi-preset"
+  },
+  "eslintConfig": {
+    "extends": "yoshi"
+  }
+}

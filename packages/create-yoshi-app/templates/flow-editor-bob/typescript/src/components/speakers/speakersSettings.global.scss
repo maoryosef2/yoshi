@@ -1,0 +1,15 @@
+@import "wix-base-ui/src/controls/radioButtons.scss";
+@import "wix-base-ui/src/controls/checkbox.scss";
+@import "wix-base-ui/src/controls/textLabel.scss";
+@import "wix-base-ui/src/controls/divider.scss";
+@import "wix-base-ui/src/controls/sectionDivider.scss";
+@import "wix-base-ui/src/controls/button.scss";
+
+@import "wix-base-ui/src/composites/radioButtonsLabeled.scss";
+@import "wix-base-ui/src/composites/radioButtons.scss";
+@import "wix-base-ui/src/composites/checkboxes.scss";
+@import "wix-base-ui/src/composites/buttonLargeFixedBottom.scss";
+
+body {
+	margin: 0;
+}
