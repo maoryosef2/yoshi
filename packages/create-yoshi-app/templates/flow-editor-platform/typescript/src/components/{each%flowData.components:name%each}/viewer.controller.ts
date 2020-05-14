@@ -27,7 +27,7 @@ function createWidget(
   };
 }
 
-const speakersViewerController = widgetScriptBuilder()
+const widgetViewerController = widgetScriptBuilder()
   .withDefaultProps(DEFAULT_PROPS)
   .withCreateMethod(createWidget)
   .build();
@@ -40,4 +40,4 @@ export default ({
     $w: WixSelector;
     wixCodeApi: WixCodeAPI;
   };
-}) => speakersViewerController(controllerConfig);
+}) => widgetViewerController(controllerConfig);
