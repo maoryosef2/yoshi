@@ -5,6 +5,7 @@ export type TemplateControllerConfig = {
   id: string | null;
   controllerFileName: string;
   widgetType: WidgetType;
+  controllerType?: string;
 };
 
 type Opts = {
@@ -29,6 +30,12 @@ const importsForControllers = t<{
   }}
 `;
 
+const getControllerScriptId = (controller: TemplateControllerConfig) => {
+  const controllerScriptId = controller.controllerType || controller.id;
+
+  return controllerScriptId ? `"${controllerScriptId}"` : controllerScriptId;
+};
+
 const controllerConfigs = t<{
   controllersMeta: Array<TemplateControllerConfig>;
 }>`${({ controllersMeta }) =>
@@ -37,7 +44,7 @@ const controllerConfigs = t<{
       (controller, i) =>
         `{ method: ${getControllerVariableName(i)},
           widgetType: "${controller.widgetType}",
-          id: ${controller.id ? `"${controller.id}"` : controller.id} }`,
+          id: ${getControllerScriptId(controller)} }`,
     )
     .join(', ')}`;
 

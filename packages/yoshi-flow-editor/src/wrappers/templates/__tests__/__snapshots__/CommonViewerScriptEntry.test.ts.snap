@@ -14,6 +14,25 @@ exports[`CommonViewerScriptEntry template generates correct template w/o control
 "
 `;
 
+exports[`CommonViewerScriptEntry template generates correct template with controllerType override 1`] = `
+"
+  import {createControllersWithDescriptors, initAppForPageWrapper} from 'yoshi-flow-editor-runtime/build/viewerScript.js';
+  
+  import controller0 from 'project/src/components/todo/controller.ts';
+import controller1 from 'project/src/components/todo/controller.ts';
+
+  import * as viewerApp from 'project/src/app.ts';
+  var importedApp = viewerApp;
+
+  export const initAppForPage = initAppForPageWrapper(importedApp.initAppForPage);
+  export const createControllers = createControllersWithDescriptors([{ method: controller0,
+          widgetType: \\"STUDIO_WIDGET\\",
+          id: \\"123\\" }, { method: controller1,
+          widgetType: \\"STUDIO_WIDGET\\",
+          id: \\"09876\\" }], importedApp.mapPlatformStateToAppData);
+"
+`;
+
 exports[`CommonViewerScriptEntry template generates correct template with multiple controllers 1`] = `
 "
   import {createControllersWithDescriptors, initAppForPageWrapper} from 'yoshi-flow-editor-runtime/build/viewerScript.js';
